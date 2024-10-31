@@ -14,14 +14,16 @@ const CandidatesPage = () => {
             </section>
 
             <section className="flex item-center justify-center h-full mt-20 mb-20">
-                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6 xl:gap-x-8">
+                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                     {fanbaseList.map((fanbase) => (
                         <>
-                            <CardCandidate
-                                id={fanbase.id}
-                                name={fanbase.nama}
-                                img={fanbase.logo}
-                            />
+                            <div key={fanbase.id}>
+                                <CardCandidate
+                                    id={fanbase.id}
+                                    name={fanbase.nama}
+                                    img={fanbase.logo}
+                                />
+                            </div>
                         </>
                     ))}
                 </div>

@@ -4,7 +4,7 @@ import "./globals.css"
   
 export const metadata: Metadata = {
     title: "SJW48 Awards",
-    description: "Fanbase of the Year 2024",
+    description: "Fanbase of the Year",
   };
 
 export default function RootLayout({
