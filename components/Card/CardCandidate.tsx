@@ -1,4 +1,4 @@
-const CardCandidate = ({id, name, img}) => (
+const CardCandidate = ({id, name, img} : {id: number, name :string, img: string}) => (
     <div key={id} className="group relative">
     <div className="aspect-h-1 aspect-w-1 w-40 overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-40">
       <img

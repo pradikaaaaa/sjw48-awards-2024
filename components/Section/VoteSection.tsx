@@ -1,4 +1,4 @@
-const Card = ({ number, text, buttonText, url }) => (
+const Card = ({ number, text, buttonText, url } : {number:string, text:string, buttonText:string, url:string}) => (
     <div className="flex flex-col items-center bg-gradient-to-br from-blue-300 to-pink-300 text-center rounded-2xl shadow-lg p-6 m-4 w-96">
       <h1 className="text-6xl font-bold text-black">{number}</h1>
       <p className="text-black mt-2 mb-4">{text}</p>
@@ -24,6 +24,8 @@ const Card = ({ number, text, buttonText, url }) => (
       <Card 
         number="1" 
         text="fanbase dengan posisi tertinggi akan terpilih menjadi pemenang FANBASE of the Year" 
+        buttonText=""
+        url=""
       />
   
       {/* Vote Button */}
