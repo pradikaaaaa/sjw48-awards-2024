@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header"
 import "./globals.css"
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
     title: "SJW48 Awards 2024",
@@ -21,6 +22,7 @@ export default function RootLayout({
             <body>
                 <Header />
                 {children}
+                <ScrollToTop />
             </body>
         </html>
     )
