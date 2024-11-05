@@ -1,7 +1,7 @@
 import React from "react";
 
 const TimelineItem = ({ cat, description, bgColor }: { cat: string, description: string[], bgColor: string }) => (
-    <div className="flex items-center space-x-4 lg:w-1/2 md:w-full">
+    <div className="flex items-center space-x-4 xl:w-2/3 lg:w-full md:w-full">
         <div
             className={`flex flex-col items-center justify-center w-32 h-32 ${bgColor} rounded-lg text-center text-white font-bold shadow-md`}
         >

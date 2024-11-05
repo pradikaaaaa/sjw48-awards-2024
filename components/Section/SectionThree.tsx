@@ -21,7 +21,7 @@ const VoteList = () => {
   ];
 
   return (
-    <div className="lg:px-64 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 p-8 bg-white min-h-10">
+    <div className="lg:px-64 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-8 bg-white min-h-10">
       {items.map((item, index) => (
         <ItemCard key={index} {...item} />
       ))}
