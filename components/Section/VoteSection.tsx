@@ -11,7 +11,7 @@ const Card = ({ number, text, buttonText, url } : {number:string, text:string, b
   );
   
   const VoteSection = () => (
-    <div className="flex flex-col items-center p-0">
+    <div className="flex flex-col items-center p-0 bg-white">
       {/* Card 1 */}
       <Card 
         number="51" 

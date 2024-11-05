@@ -12,6 +12,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 
 const Header = () => {
@@ -30,10 +31,16 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
+            {/* <img
               alt=""
               src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
               className="h-8 w-auto"
+            /> */}
+            <Image
+              src="/images/logo/logo-bgwhite.svg"
+              alt=""
+              width={40}
+              height={40}
             />
           </a>
         </div>
@@ -85,10 +92,16 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">SJW48 Awards 2024</span>
-              <img
+              {/* <img
                 alt=""
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
+              /> */}
+              <Image
+                src="/images/logo/logo-bgwhite.svg"
+                alt=""
+                width={40}
+                height={40}
               />
             </a>
             <button
