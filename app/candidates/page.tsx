@@ -15,7 +15,7 @@ const CandidatesPage = () => {
                 </section>
 
                 <section className="flex item-center justify-center h-full mt-20 pb-20 mx-4 bg-white">
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 2xs:grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                         {fanbaseList.map((fanbase) => (
                             <>
                                 <div key={fanbase.id}>
