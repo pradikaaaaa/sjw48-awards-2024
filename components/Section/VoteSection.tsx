@@ -29,9 +29,9 @@ const Card = ({ number, text, buttonText, url } : {number:string, text:string, b
       />
   
       {/* Vote Button */}
-      <button className="mt-4 px-6 py-3 bg-gradient-to-r from-pink-400 to-blue-400 text-white text-lg font-bold rounded-full shadow-lg hover:opacity-90 transition duration-300">
+      <a href="/vote" className="mt-4 mb-10 px-6 py-3 bg-gradient-to-r from-pink-400 to-blue-400 text-white text-lg font-bold rounded-full shadow-lg hover:opacity-90 transition duration-300">
         Vote Sekarang
-      </button>
+      </a>
     </div>
   );
   
