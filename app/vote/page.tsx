@@ -1,6 +1,6 @@
 const VotePage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#FF5858] to-[#FFC8C8 ] p-8">
+    <div data-theme="light" className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#FF5858] to-[#FFC8C8 ] p-8">
       {/* Title */}
       <h1 className="text-6xl font-bold text-center text-black mt-8 mb-4">
         <span className="border-b-8 border-blue-300">VOTE</span>
