@@ -3,10 +3,10 @@ import React from "react";
 const ItemCard = ({ title, subtitle, buttonLabel } : {title:string, subtitle:string, buttonLabel: string}) => (
   <div className="flex justify-between items-center p-4 bg-white shadow-md rounded-lg mb-4">
     <div>
-      <h2 className="text-lg text-black font-normal">{title}</h2>
+      <h2 className="text-lg text-black font-bold">{title}</h2>
       <p className="text-sm text-gray-700 font-semibold mt-1">{subtitle}</p>
     </div>
-    <button className="bg-cyan-500 text-white font-semibold px-4 py-2 rounded-md shadow-md hover:bg-cyan-600 transition duration-300">
+    <button className="bg-[#1D5D83] text-white font-semibold px-4 py-2 rounded-md shadow-md">
       {buttonLabel}
     </button>
   </div>

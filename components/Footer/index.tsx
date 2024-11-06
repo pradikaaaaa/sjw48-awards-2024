@@ -1,9 +1,10 @@
 const Footer = () => {
     return (
-        <section className="flex items-center justify-center h-4 text-black text-center ">
-            <div>
+        <footer className="bg-transparent w-full flex items-center justify-center">
+            <div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-center">
+                <span className="text-sm text-black">&copy; 2024</span>
             </div>
-        </section>
+        </footer>
     )
 }
 
