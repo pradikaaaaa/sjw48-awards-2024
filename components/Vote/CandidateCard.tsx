@@ -1,6 +1,6 @@
 'use client'
 
-const CandidateCard = ({ id, name, image, voteCount, onVoteChange }: { id: number, name: string, image: string }) => {
+const CandidateCard = ({ id, name, image, voteCount, onVoteChange }: { id: number, name: string, image: string, voteCount: number, onVoteChange : any }) => {
     // const [voteCount, setVoteCount] = useState(0);
 
     const incrementVote = () => onVoteChange(id, voteCount + 1)
