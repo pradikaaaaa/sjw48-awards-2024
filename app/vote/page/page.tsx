@@ -16,13 +16,10 @@ const VotePage = () => {
     )
 
     const handleVoteChange = (candidateId : number, newVoteCount : number) => {
-        if(totalVotes < maxVote ){
             setVotes(prevVotes => ({
                 ...prevVotes,
                 [candidateId]: newVoteCount,
             }))
-        }
-       
     }
 
     const totalVotes = Object.values(votes).reduce((sum, count) => sum + count, 0);
@@ -50,6 +47,8 @@ const VotePage = () => {
                             name={candidate.nama}
                             image={candidate.logo}
                             voteCount={votes[candidate.id]}
+                            voteTerpakai={totalVotes}
+                            jumlahVote={maxVote}
                             onVoteChange={handleVoteChange}
                         />
                     ))}
