@@ -1,6 +1,12 @@
+'use client'
+
+import { useRouter } from "next/navigation"
+
 const VotePage = () => {
+  const router = useRouter()
+
   return (
-    <div data-theme="light" className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#FF5858] to-[#FFC8C8 ] p-8">
+    <div className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#FF5858] to-[#FFC8C8] p-8">
       {/* Title */}
       <h1 className="text-6xl font-bold text-center text-black mt-8 mb-4">
         <span className="border-b-8 border-blue-300">VOTE</span>
@@ -35,7 +41,9 @@ const VotePage = () => {
         </button> */}
 
       {/* Submit Button */}
-      <button className="mt-8 px-6 py-3 bg-gradient-to-r from-[#60EFFF] to-[#4545F7] text-white font-bold text-lg rounded-full shadow-lg hover:opacity-90 transition duration-300">
+      <button 
+        onClick={()=> router.push('/vote/page')}
+        className="mt-8 px-6 py-3 bg-gradient-to-r from-[#60EFFF] to-[#4545F7] text-white font-bold text-lg rounded-full shadow-lg hover:opacity-90 transition duration-300">
         GUNAKAN KODE
       </button>
     </div>
