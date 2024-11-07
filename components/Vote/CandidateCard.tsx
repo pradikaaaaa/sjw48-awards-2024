@@ -1,6 +1,19 @@
 'use client'
 
-const CandidateCard = ({ id, name, image, voteCount, onVoteChange }: { id: number, name: string, image: string, voteCount: number, onVoteChange : any }) => {
+const CandidateCard = ({
+    id,
+    name,
+    image,
+    voteCount,
+    onVoteChange
+}:
+    {
+        id: number,
+        name: string,
+        image: string,
+        voteCount: number,
+        onVoteChange: (id: number, voteCount: number) => void
+    }) => {
     // const [voteCount, setVoteCount] = useState(0);
 
     const incrementVote = () => onVoteChange(id, voteCount + 1)
@@ -8,9 +21,9 @@ const CandidateCard = ({ id, name, image, voteCount, onVoteChange }: { id: numbe
 
     return (
         <div key={id} className="flex flex-col items-center bg-white rounded-lg shadow-lg p-4">
-            <img 
-                src={image} 
-                alt={name} 
+            <img
+                src={image}
+                alt={name}
                 className="w-full h-full object-cover rounded-md mb-2" />
             <h3 className="text-center font-semibold">{name}</h3>
             <div className="flex items-center justify-between w-full mt-2">
