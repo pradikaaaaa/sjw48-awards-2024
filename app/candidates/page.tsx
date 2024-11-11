@@ -2,6 +2,7 @@ import CardCandidate from "@/components/Card/CardCandidate"
 import fanbaseList from "@/data/fanbase"
 
 const CandidatesPage = () => {
+    const sortedData = fanbaseList.sort((a, b) => a.nama.localeCompare(b.nama));
 
     return (
         <>
@@ -16,7 +17,7 @@ const CandidatesPage = () => {
 
                 <section className="flex item-center justify-center h-full mt-20 pb-20 mx-4 bg-white">
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 2xs:grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
-                        {fanbaseList.map((fanbase) => (
+                        {sortedData.map((fanbase) => (
                             <>
                                 <div key={fanbase.id}>
                                     <CardCandidate
