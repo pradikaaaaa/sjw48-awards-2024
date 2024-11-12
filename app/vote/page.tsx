@@ -1,10 +1,34 @@
 'use client'
 
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 const VotePage = () => {
+  const [formData, setFormData] = useState({
+    kode1 : '',
+    kode2 : '',
+    kode3 : '',
+    kode4 : '',
+    kode5 : '',
+  })
   const router = useRouter()
 
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setFormData({...formData, [name]:value})
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = Object.values(formData).filter(value => value !== "")
+
+    const data = {
+      "kode_vote" : result
+    }
+
+    console.log(data)
+  }
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#FF5858] to-[#FFC8C8] p-8">
       {/* Title */}
@@ -22,12 +46,15 @@ const VotePage = () => {
       </p>
 
       {/* Voting Inputs */}
+      <form onSubmit={handleSubmit}>
       <div className="space-y-4 w-full max-w-lg">
         {Array.from({ length: 5 }, (_, i) => (
           <div key={i} className="flex items-center">
             {/* <span className="text-lg text-gray-900 w-8 text-center">{i + 1}</span> */}
             <input
+              name={`kode${i+1}`}
               type="text"
+              onChange={handleChange}
               placeholder="Kode Voting (16 Karakter)"
               className="flex-1 px-4 py-3 ml-2 bg-white text-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
@@ -42,11 +69,14 @@ const VotePage = () => {
 
       {/* Submit Button */}
       <button 
-        onClick={()=> router.push('/vote/page')}
+        type="submit"
         className="mt-8 px-6 py-3 bg-gradient-to-r from-[#60EFFF] to-[#4545F7] text-white font-bold text-lg rounded-full shadow-lg hover:opacity-90 transition duration-300">
         GUNAKAN KODE
       </button>
+      </form>
+
     </div>
+   
   )
 }
 
