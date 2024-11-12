@@ -126,6 +126,46 @@ const fanbaseList: Fanbase[] = [
         nama : "Gracias",
         logo : "https://static.miraheze.org/jkt48wikiwiki/d/d7/Gracias.jpg"
     },
+    {
+        id : 26,
+        nama : "Alamanda",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/3/30/Alamanda_logo.jpg"
+    },
+    {
+        id : 27,
+        nama : "Aninimous",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/6/68/Aninimous.jpg"
+    },
+    {
+        id : 28,
+        nama : "Cathleenexus",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/6/63/Cathleennexus.png"
+    },
+    {
+        id : 29,
+        nama : "Cellineyours",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/a/a9/Cellineyours.jpg"
+    },
+    {
+        id : 30,
+        nama : "Chelsealand",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/3/37/Chelsealand.jpg"
+    },
+    {
+        id : 31,
+        nama : "Cynthiaction",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/7/7f/Cynthiaction.jpg"
+    },
+    {
+        id : 32,
+        nama : "Denalize",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/d/df/Denalize.jpg"
+    },
+    {
+        id : 33,
+        nama : "Daisynateur",
+        logo : "https://static.miraheze.org/jkt48wikiwiki/f/ff/Desynetsui.jpg"
+    },
 ]
 
 export default fanbaseList
