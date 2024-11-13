@@ -5,13 +5,13 @@ import CandidateCard from "@/components/Vote/CandidateCard"
 import VoteSection from "@/components/Vote/VoteSection"
 // import fanbaseList from "@/data/fanbase";
 import api from '@/services/api';
-import ModalKonfirmasiVote from '../ModalKonfirmasiVote';
+// import ModalKonfirmasiVote from '../ModalKonfirmasiVote';
 
 
 const VotingPage = ({maxVotes}:{maxVotes:number}) => {
     const [maxVote, setMaxVote] = useState(0)
     const [nominasi, setNominasi] = useState([])
-    const [openModalKonfirmasi, setOpenModalKonfirmasi] = useState(false)
+    // const [openModalKonfirmasi, setOpenModalKonfirmasi] = useState(false)
     const endPoint = `/nominasi`
 
     const [votes, setVotes] = useState(
