@@ -3,10 +3,11 @@
 import CardCandidate from "@/components/Card/CardCandidate"
 
 import API from "@/services/api";
+import { Fanbase } from "@/types/fanbase";
 import { useState, useEffect } from "react";
 
 const CandidatesPage = () => {
-    const [nominasi, setNominasi] = useState([])
+    const [nominasi, setNominasi] = useState<Fanbase[]>([])
     const endPoint = `/nominasi`
 
     useEffect(()=>{

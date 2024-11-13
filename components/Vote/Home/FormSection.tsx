@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent  } from "react";
 
 const FormSection = ({onCodeSubmit}:{onCodeSubmit:(code: string[])=> void}) => {
   const [formData, setFormData] = useState({
@@ -11,12 +11,12 @@ const FormSection = ({onCodeSubmit}:{onCodeSubmit:(code: string[])=> void}) => {
     kode5: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target
     setFormData({...formData, [name]:value})
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = Object.values(formData).filter(value => value !== "")
     onCodeSubmit(result)
