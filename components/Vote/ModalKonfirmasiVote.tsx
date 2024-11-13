@@ -7,12 +7,29 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
+import { VoteFanbase } from "@/types/vote_fanbase";
 
-const ModalKonfirmasiVote = () => {
-  const [open, setOpen] = useState(true);
+const ModalKonfirmasiVote = ({
+  status, 
+  fanbaseList,
+  onClickVote,
+  onSubmitVote,
+} : 
+  {
+    status : boolean, 
+    fanbaseList : VoteFanbase[],
+    onClickVote:(status:boolean)=> void,
+    onSubmitVote:() => void
+  }) => {
+  // const [open, setOpen] = useState(status);
+  const voteClick = () => {
+    // setOpen(false)
+    onSubmitVote()
+    onClickVote(false)
+  }
 
   return (
-    <Dialog open={open} onClose={setOpen} className="relative z-10">
+    <Dialog open={status} onClose={voteClick} className="relative z-10">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
@@ -35,7 +52,13 @@ const ModalKonfirmasiVote = () => {
                   </DialogTitle>
                   <div className="mt-2 text-white text-md">
                    <ul>
-                    <li>Degrees : 1 Suara</li>
+                    {
+                      fanbaseList.map((item, index) => (
+                        <>
+                          <li key={index}>{item.nama} : {item.jumlah_vote} Suara</li>
+                        </>
+                      ))
+                    }
                    </ul>
                   </div>
                 </div>
@@ -44,7 +67,7 @@ const ModalKonfirmasiVote = () => {
             <div className="bg-gradient-to-r from-[#60EFFF] to-[#4545F7] px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
               <button
                 type="button"
-                onClick={() => setOpen(false)}
+                onClick={voteClick}
                 className="inline-flex w-full justify-center rounded-md bg-[#FF5D5D] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
               >
                 VOTE

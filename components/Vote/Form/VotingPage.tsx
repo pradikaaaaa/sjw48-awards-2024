@@ -3,32 +3,34 @@
 import { useState, useEffect } from 'react'
 import CandidateCard from "@/components/Vote/CandidateCard"
 import VoteSection from "@/components/Vote/VoteSection"
-// import fanbaseList from "@/data/fanbase";
+
 import api from '@/services/api';
-// import ModalKonfirmasiVote from '../ModalKonfirmasiVote';
+import { Fanbase } from '@/types/fanbase';
+import { VoteFanbase } from '@/types/vote_fanbase';
+import ModalKonfirmasiVote from '../ModalKonfirmasiVote';
+import ModalSelesaiVote from '../ModalSelesaiVote';
 
 
-const VotingPage = ({maxVotes}:{maxVotes:number}) => {
+
+const VotingPage = ({maxVotes, listIdVote}:{maxVotes:number, listIdVote:number[]}) => {
     const [maxVote, setMaxVote] = useState(0)
-    const [nominasi, setNominasi] = useState([])
-    // const [openModalKonfirmasi, setOpenModalKonfirmasi] = useState(false)
-    const endPoint = `/nominasi`
+    const [nominasi, setNominasi] = useState<Fanbase[]>([])
+    const [openModalKonfirmasi, setOpenModalKonfirmasi] = useState(false)
+    const [openModalSelesai, setOpenModalSelesai] = useState(false)
 
-    const [votes, setVotes] = useState(
-        nominasi.reduce((acc: { [key: number]: number }, candidate) => {
-            acc[candidate.id] = 0;
-            return acc;
-        }, {})
-    )
+    const [votes, setVotes] = useState<VoteFanbase[]>([])
 
     const handleVoteChange = (candidateId: number, newVoteCount: number) => {
-        setVotes(prevVotes => ({
-            ...prevVotes,
-            [candidateId]: newVoteCount,
-        }))
+       setVotes(prevVotes =>
+            prevVotes.map(item =>
+                item.id === candidateId ? { ...item, jumlah_vote : newVoteCount} : item
+            )
+       )
     }
 
-    const totalVotes = Object.values(votes).reduce((sum, count) => sum + count, 0);
+    const handleVoteKonfirmasi = (open : boolean) => {
+        setOpenModalKonfirmasi(open)
+    }
 
     useEffect(() => {
         getData()
@@ -36,20 +38,55 @@ const VotingPage = ({maxVotes}:{maxVotes:number}) => {
     }, [])
 
     const getData =  async () => {
+        const endPoint = `/nominasi`
         try{
             const response = await api.create().apiGET({endPoint})
             setNominasi(response.data)
-            setVotes(response.data.reduce((acc: { [key: number]: number }, candidate) => {
-                acc[candidate.id] = 0;
-                return acc;
-            }, {}))
+            const _votes = response.data.map((item:Fanbase)=>({
+                id : item.id,
+                jumlah_vote : 0,
+                nama : item.nama
+            }))
+            setVotes(_votes)
         }catch(error){
             console.warn(error)
         }
     }
 
-    console.log('votee=>',votes)
-    // const sortedData = fanbaseList.sort((a, b) => a.nama.localeCompare(b.nama));
+    const voteItem = (id : number) : number => {
+        const selectedVote = votes.find(item => item.id === id)
+        return selectedVote ? selectedVote.jumlah_vote : 0
+    }
+
+    const getTotalVotes = () => {
+        return votes.reduce((total, item) => total + item.jumlah_vote, 0);
+      };
+
+    const totalVotes = getTotalVotes()
+    
+    const getSelectedNominasi = () => {
+        return votes.filter(item => item.jumlah_vote !== 0);
+    };
+
+    const selectedNominasi = getSelectedNominasi()
+
+    //
+    const handleSubmitVote = async () => {
+        const endPoint = `/vote/process`
+        const request = {
+            "id_kode" : listIdVote,
+            "vote" : selectedNominasi 
+        }
+    
+        try{
+            const response = await api.create().apiPOST({endPoint, request})
+            if(response.status == '200'){
+                setOpenModalSelesai(true)
+            }
+        }catch(error){
+            console.warn(error)
+        }
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-r from-[#FF5858] to-[#FFC8C8] p-8">
@@ -58,7 +95,11 @@ const VotingPage = ({maxVotes}:{maxVotes:number}) => {
             <div className="flex flex-col md:flex-row">
                 {/* Bagian VoteSection */}
                 <div className="static md:w-1/4 mb-6 md:mb-0 md:mr-6">
-                    <VoteSection voteTerpakai={totalVotes} jumlahVotes={maxVote} />
+                    <VoteSection 
+                        voteTerpakai={totalVotes} 
+                        jumlahVotes={maxVote} 
+                        onClickVote={handleVoteKonfirmasi}
+                    />
                 </div>
 
                 {/* Bagian Kandidat */}
@@ -69,7 +110,7 @@ const VotingPage = ({maxVotes}:{maxVotes:number}) => {
                             id={candidate.id}
                             name={candidate.nama}
                             image={candidate.logo}
-                            voteCount={votes[candidate.id]}
+                            voteCount={voteItem(candidate.id)}
                             voteTerpakai={totalVotes}
                             jumlahVote={maxVote}
                             onVoteChange={handleVoteChange}
@@ -77,6 +118,17 @@ const VotingPage = ({maxVotes}:{maxVotes:number}) => {
                     ))}
                 </div>
             </div>
+
+            <ModalKonfirmasiVote 
+                status={openModalKonfirmasi} 
+                fanbaseList={selectedNominasi}
+                onClickVote={handleVoteKonfirmasi} 
+                onSubmitVote={handleSubmitVote}
+            />
+
+            <ModalSelesaiVote
+                status={openModalSelesai}
+            />
         </div>
     );
 }
