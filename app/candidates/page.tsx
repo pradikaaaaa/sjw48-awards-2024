@@ -1,8 +1,30 @@
+"use client"
+
 import CardCandidate from "@/components/Card/CardCandidate"
-import fanbaseList from "@/data/fanbase"
+
+import API from "@/services/api";
+import { Fanbase } from "@/types/fanbase";
+import { useState, useEffect } from "react";
 
 const CandidatesPage = () => {
-    const sortedData = fanbaseList.sort((a, b) => a.nama.localeCompare(b.nama));
+    const [nominasi, setNominasi] = useState<Fanbase[]>([])
+    const endPoint = `/nominasi`
+
+    useEffect(()=>{
+        getData()
+    },[])
+
+    const getData = async () => {
+        try {
+            const data = await API.create().apiGET({endPoint});
+            // console.log(data)
+            setNominasi(data.data)
+
+            // console.log(data.data)
+        }catch(error){
+            console.warn(error)
+        }
+    }
 
     return (
         <>
@@ -17,7 +39,7 @@ const CandidatesPage = () => {
 
                 <section className="flex item-center justify-center h-full mt-20 pb-20 mx-4 bg-white">
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 2xs:grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
-                        {sortedData.map((fanbase) => (
+                        {nominasi.map((fanbase) =>(
                             <>
                                 <div key={fanbase.id}>
                                     <CardCandidate
