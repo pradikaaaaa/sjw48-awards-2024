@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import CandidateCard from "@/components/Vote/CandidateCard"
-import VoteSection from "@/components/Vote/VoteSection"
+import CandidateCard from "@/components/Vote/Form/CandidateCard"
+import VoteSection from "@/components/Vote/Form/VoteSection"
 
 import api from '@/services/api';
 import { Fanbase } from '@/types/fanbase';
 import { VoteFanbase } from '@/types/vote_fanbase';
-import ModalKonfirmasiVote from '../ModalKonfirmasiVote';
-import ModalSelesaiVote from '../ModalSelesaiVote';
+import ModalKonfirmasiVote from './ModalKonfirmasiVote';
+import ModalSelesaiVote from './ModalSelesaiVote';
 
 
 
@@ -60,7 +60,7 @@ const VotingPage = ({maxVotes, listIdVote}:{maxVotes:number, listIdVote:number[]
 
     const getTotalVotes = () => {
         return votes.reduce((total, item) => total + item.jumlah_vote, 0);
-      };
+    };
 
     const totalVotes = getTotalVotes()
     
@@ -94,16 +94,16 @@ const VotingPage = ({maxVotes, listIdVote}:{maxVotes:number, listIdVote:number[]
             <p className="text-center mb-4 text-sm">*Tambahkan jumlah poin suara untuk fanbase yang kamu dukung, kemudian klik tombol <b>VOTE</b></p>
             <div className="flex flex-col md:flex-row">
                 {/* Bagian VoteSection */}
-                <div className="static md:w-1/4 mb-6 md:mb-0 md:mr-6">
+                <div className="flex md:w-1/4 mb-6 md:mb-0 md:mr-6 xs:justify-center">
                     <VoteSection 
-                        voteTerpakai={totalVotes} 
+                        voteTerpakai={maxVote - totalVotes} 
                         jumlahVotes={maxVote} 
                         onClickVote={handleVoteKonfirmasi}
                     />
                 </div>
 
                 {/* Bagian Kandidat */}
-                <div className="static md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="static md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-4 xl:mb-4 sm:mb-80 xs:mb-80">
                     {nominasi.map((candidate, index) => (
                         <CandidateCard
                             key={index}

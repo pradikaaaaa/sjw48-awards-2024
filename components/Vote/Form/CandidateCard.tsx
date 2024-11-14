@@ -36,7 +36,7 @@ const CandidateCard = ({
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = parseInt(e.target.value.replace(/^0+/, ''), 10);
         if (!isNaN(newValue)){
-            if(newValue <= (jumlahVote - voteTerpakai)){
+            if((voteTerpakai - count + newValue) <= jumlahVote){
                 setCount(newValue)
                 onVoteChange(id, newValue)
             }
@@ -62,7 +62,8 @@ const CandidateCard = ({
             <div className="flex items-center justify-between w-full mt-2">
                 <button onClick={decrementVote} className="text-lg font-bold px-2">-</button>
                 {/* <span className="text-lg font-bold">{voteCount}</span> */}
-                <input type="number"
+                <input 
+                    type="number"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm text-center text-bold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
