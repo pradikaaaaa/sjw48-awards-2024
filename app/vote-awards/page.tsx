@@ -8,14 +8,17 @@ const VoteGForm = () => {
           <span className="border-b-8 border-blue-300">VOTE</span>
         </h1>
 
-        <p>
-            atau klik di sini
-        </p>
-
-        <div className="aspect-w-16 aspect-h-9 bg-blue-500"></div>
+        <div className="mb-4">
+          atau klik&nbsp;
+          <a
+            className="border-b-2 border-blue-200"
+            href="https://forms.gle/GWPEstpZ1hZinmRHA" target="_blank">
+            disini
+          </a>
+        </div>
 
         <div className="w-full max-w-4xl mx-auto">
-            <FrameVote />
+          <FrameVote />
         </div>
       </div>
     </>
