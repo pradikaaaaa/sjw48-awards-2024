@@ -32,10 +32,11 @@ const BenefitCat = () => {
                 "Polaroid + signed (member sjw48)",
                 "Screening After Movie (30 min sebelum rilis di sosmed)",
                 "Dilibatkan di shortmovie SJW48",
-                "Groupshot bersama SJW48", "Exclusive SJW48 Digital Photobook",
-                "Free totebag (ganara), lightstick (potek), dan tshirt (qris onielity)",
+                "Groupshot bersama SJW48", 
+                "Exclusive SJW48 Digital Photobook",
+                "Free totebag, lightstick, dan tshirt",
                 "Kesempatan mengganti pemenang kategori “of the year”",
-                "Kode Vote “Fanbase of The Year” sebanyak 250 suara"],
+                "Kode Vote “Fanbase Pilihan Pemirsa” sebanyak 250 suara"],
             bgColor: "bg-gradient-to-r from-[#60EFFF] from-10% to-[#4545F7]"
         },
         {
@@ -43,15 +44,15 @@ const BenefitCat = () => {
             description: [
                 "Groupshot bersama SJW48",
                 "Exclusive SJW48 Digital Photobook",
-                "Free tshirt (qris onielity)",
-                "Kode Vote “Fanbase of The Year” sebanyak 75 suara"
+                "Free tshirt",
+                "Kode Vote “Fanbase Pilihan Pemirsa” sebanyak 75 suara"
             ],
             bgColor: "bg-gradient-to-r from-[#F89B29] to-[#FF0F7B]"
         },
         {
             cat: "CAT6",
             description: [
-                "Kode Vote “Fanbase of The Year” sebanyak 10 suara",
+                "Kode Vote “Fanbase Pilihan Pemirsa” sebanyak 10 suara",
                 "Dibuatkan community twitter",
                 "Jas hujan sekali pakai"
             ],
@@ -59,14 +60,14 @@ const BenefitCat = () => {
         },
         {
             cat: "CAT8", description: [
-                "Kode Vote “Fanbase of The Year” sebanyak 5 suara", "Rasa kekeluargaan dan sense of belonging"],
+                "Kode Vote “Fanbase Pilihan Pemirsa” sebanyak 5 suara", "Rasa kekeluargaan dan sense of belonging"],
             bgColor: "bg-gradient-to-r from-[#6FE3E1] to-[#5257E5]"
         },
     ];
 
     return (
         <div className="bg-white">
-            <h2 className="text-4xl font-bold my-4 mx-8">TICKET BENEFIT</h2>
+            <h2 className="text-4xl font-bold mx-8 py-8 text-black">TICKET BENEFIT</h2>
             <div className="space-y-4 p-8 bg-white min-h-screen">
                 {items.map((item, index) => (
                     <CategoryItem key={index} {...item} />

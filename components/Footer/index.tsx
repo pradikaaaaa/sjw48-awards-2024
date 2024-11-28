@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 
 const Footer = () => {
     const pathname = usePathname()
-    const isVote = pathname === '/vote'
+    const isVote = pathname === '/vote-awards' || '/vote-fanbase'
     const isVotePage = pathname === '/vote/page'
 
     // console.log('ini pathname ==>', pathname)

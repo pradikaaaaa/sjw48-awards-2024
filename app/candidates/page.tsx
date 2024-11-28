@@ -32,7 +32,7 @@ const CandidatesPage = () => {
                 <section className="flex justify-start h-32 text-black bg-white">
                     <h4 className="font-bold lg:text-5xl sm:text-4xl xs:text-4xl 2xs:text-3xl text-wrap 2xs:p-8 xs:p-8 sm:p-8 sm:w-4/5 lg:mx-14  xl:p-14  xl:w-1/2">
                         <p>
-                            KANDIDATE PEMILIHAN FANBASE OF THE YEAR 2024
+                            KANDIDATE FANBASE PILIHAN PEMIRSA 2024
                         </p>
                     </h4>
                 </section>

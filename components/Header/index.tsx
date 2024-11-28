@@ -21,8 +21,10 @@ const Header = () => {
 
   const nav_items = [
     { href: "/", label: "Home" },
-    { href: "/vote", label: "Vote" },
-    { href: "/candidates", label: "Candidates" }
+    { href: "/vote-fanbase", label: "Vote" },
+    { href:"/vote-awards", label:"Awards"},
+    { href: "/candidates", label: "Candidates" },
+    {href:"/kategori",label:"Category"}
   ]
 
   return (

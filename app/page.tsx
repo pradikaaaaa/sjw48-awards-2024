@@ -5,6 +5,7 @@ import SectionOne from "@/components/Section/SectionOne"
 import VoteList from "@/components/Section/SectionThree"
 import SectionTwo from "@/components/Section/SectionTwo"
 import VoteSection from "@/components/Section/VoteSection"
+// import FrameVote from "@/components/Vote/Frame"
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <SectionTwo />
             <VoteList />
             <BenefitCat />
+            {/* <FrameVote/> */}
         </>
     )
 }
