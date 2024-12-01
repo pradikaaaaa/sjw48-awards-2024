@@ -11,7 +11,7 @@ const CandidatesPage = () => {
     const endPoint = `/nominasi`
 
     useEffect(()=>{
-        getData()
+        getData()        
     },[])
 
     const getData = async () => {

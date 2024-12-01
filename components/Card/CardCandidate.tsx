@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 const CardCandidate = ({id, name, img} : {id: number, name :string, img: string}) => (
     <div key={id} className="group relative">
     <div className="aspect-h-1 aspect-w-1 xl:w-40 lg:w-40 md:w-40 sm:w-40 xs:w-40 2xs:w-32 overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 xl:h-40 lg:h-40 md:h-40 sm:h-40 xs:h-40 2xs:h-32">
-      <img
+      <Image width={200} height={200} quality={50}
         alt={name}
         src={img}
         className="h-full w-full object-cover object-center lg:h-full lg:w-full"

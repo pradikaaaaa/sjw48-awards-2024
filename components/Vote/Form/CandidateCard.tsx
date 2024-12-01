@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image"
 
 const CandidateCard = ({
   id,
@@ -60,7 +61,7 @@ const CandidateCard = ({
       key={id}
       className="flex flex-col items-center bg-white rounded-lg shadow-lg p-4"
     >
-      <img
+      <Image width={200} height={200} quality={50}
         src={image}
         alt={name}
         className="w-full h-full object-cover rounded-md mb-2"
