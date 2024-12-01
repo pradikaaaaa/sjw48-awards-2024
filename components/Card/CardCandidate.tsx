@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { relative } from 'path'
 
 const CardCandidate = ({id, name, img} : {id: number, name :string, img: string}) => (
     <div key={id} className="group relative">
