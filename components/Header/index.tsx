@@ -1,176 +1,199 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { useState } from "react";
 
-const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+import logo from "@/public/images/logo/logo-bgwhite.svg";
+import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
 
-  const nav_items = [
-    { href: "/", label: "Home" },
-    { href: "/vote-fanbase", label: "Vote" },
-    { href: "/vote-awards", label: "Awards" },
-    { href: "/candidates", label: "Fanbase" },
-    { href: "/kategori?tipe=terfavorit", label: "Terfavorit" },
-    {href: "/kategori?tipe=of-the-year", label: "of the Year"}
-  ];
-  // const nav_items = [
-  //   { label: "Home", href: "/" },
-  //   {
-  //     label: "Vote",
-  //     dropdown: [
-  //       { label: "Terfavorit", href: "/vote-awards" },
-  //       { label: "Fanbase Pilihan Pemirsa", href: "/vote-fanbase" },
-  //     ],
-  //   },
-  //   {
-  //     label: "Kategori",
-  //     dropdown: [
-  //       { label: "Terfavorit", href: "/kategori?tipe=terfavorit" },
-  //       { label: "of the Year", href: "/kategori?tipe=of-the-year" },
-  //       { label: "Fanbase Pilihan Pemirsa", href: "/candidates" },
-  //     ],
-  //   },
-  // ];
+import { FiMenu } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { NavItem } from "@/types/nav_item";
+
+
+const navItems: NavItem[] = [
+  {
+    label: "HOME",
+    link: "/",
+  },
+  {
+    label: "VOTE",
+    link: "#",
+    children: [
+      {
+        label: "SJW48 AWARDS 2024",
+        link: "/vote-awards"
+      },
+      {
+        label: "FANBASE PILIHAN PEMIRSA",
+        link: "/vote-fanbase"
+      },
+    ]
+  },
+  {
+    label: "NOMINASI",
+    link: "#",
+    children: [
+      {
+        label: "TERFAVORIT",
+        link: "/kategori?tipe=terfavorit"
+      },
+      {
+        label: "OF THE YEAR",
+        link: "/kategori?tipe=of-the-year"
+      },
+      {
+        label: "FANBASE PILIHAN PEMIRSA",
+        link: "/candidates"
+      }
+    ]
+  }
+];
+
+export default function Header() {
+  const [animationParent] = useAutoAnimate();
+  const [isSideMenuOpen, setSideMenue] = useState(false);
+  function openSideMenu() {
+    setSideMenue(true);
+  }
+  function closeSideMenu() {
+    setSideMenue(false);
+  }
 
   return (
-    <header className="bg-white border">
-      <nav
-        aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-      >
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">SJW48 Awards 2024</span>
-            {/* <img
-              alt=""
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            /> */}
-            <Image
-              src="/images/logo/logo-bgwhite.svg"
-              alt=""
-              width={40}
-              height={40}
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          {/* <a href="/" className="text-sm/6 font-semibold text-gray-900">
-          Home
-        </a>
-        <a href="#" className="text-sm/6 font-semibold text-gray-900">
-          Vote
-        </a>
-        <a href="/candidates" className="text-sm/6 font-semibold text-gray-900">
-          Candidates
-        </a> */}
-          {nav_items.map(({ href, label }) => {
-            const isActive = pathname === href;
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={`${
-                  isActive ? "text-blue-500" : "text-black"
-                } text-sm/6 font-semibold`}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </PopoverGroup>
-        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" className="text-sm/6 font-semibold text-gray-900">
-          Log in <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div> */}
-      </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
-      >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">SJW48 Awards 2024</span>
-              {/* <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              /> */}
-              <Image
-                src="/images/logo/logo-bgwhite.svg"
-                alt=""
-                width={40}
-                height={40}
-              />
-            </a>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+    <div className="relative z-10 mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm border">
+      {/* left side  */}
+      <section ref={animationParent} className="flex items-center mx-6 gap-10">
+        {/* logo */}
+        <Image src={logo} alt="sjw48" width={40} height={40} />
+        {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
+      </section>
+
+      {/* right side data */}
+      <section className="hidden md:flex items-center gap-8 ">
+        {/* navitems */}
+        <div className="hidden md:flex items-center gap-4 transition-all">
+          {navItems.map((d, i) => (
+            <Link
+              key={i}
+              href={d.link ?? "#"}
+              className="relative group  px-2 py-3 transition-all "
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {/* <a
-                href="/"
-                className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-              >
-                Home
-              </a> */}
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black font-bold">
+                <span>{d.label}</span>
+                {d.children && (
+                  <IoIosArrowDown className=" transition-all group-hover:rotate-0" />
+                )}
+              </p>
 
-                {nav_items.map(({ href, label }) => {
-                  const isActive = pathname === href;
-                  return (
+              {/* dropdown */}
+              {d.children && (
+                <div className="absolute   right-0   top-10 hidden w-auto  flex-col gap-1   rounded-lg bg-white py-3 shadow-md  transition-all group-hover:flex ">
+                  {d.children.map((ch, i) => (
                     <Link
-                      key={href}
-                      href={href}
-                      className={`${
-                        isActive ? "text-blue-500" : "text-black"
-                      } -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold`}
+                      key={i}
+                      href={ch.link ?? "#"}
+                      className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
                     >
-                      {label}
+                      {/* item */}
+                      <span className="whitespace-nowrap   pl-3 ">
+                        {ch.label}
+                      </span>
                     </Link>
-                  );
-                })}
-              </div>
-              {/* <div className="py-6">
-              <a
-                href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-              >
-                Log in
-              </a>
-            </div> */}
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
-  );
-};
+                  ))}
+                </div>
+              )}
+            </Link>
+          ))}
+        </div>
+      </section>
 
-export default Header;
+      <FiMenu
+        onClick={openSideMenu}
+        className="cursor-pointer text-4xl md:hidden"
+      />
+    </div>
+  );
+}
+
+function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
+  return (
+    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-end bg-black/60 md:hidden">
+      <div className=" h-full w-[65%] bg-white px-4 py-4">
+        <section className="flex justify-end">
+          <AiOutlineClose
+            onClick={closeSideMenu}
+            className="cursor-pointer text-4xl "
+          />
+        </section>
+        <div className=" flex flex-col text-base  gap-2 transition-all">
+          {navItems.map((d, i) => (
+            <SingleNavItem
+              key={i}
+              label={d.label}
+              link={d.link}
+            >
+              {d.children}
+            </SingleNavItem>
+          ))}
+        </div>
+
+        {/* <section className="  flex  flex-col   gap-8  mt-4 items-center">
+          <button className="h-fit text-neutral-400 transition-all hover:text-black/90">
+            Login
+          </button>
+
+          <button className="w-full  max-w-[200px]  rounded-xl border-2 border-neutral-400 px-4 py-2 text-neutral-400 transition-all hover:border-black hover:text-black/90">
+            Register
+          </button>
+        </section> */}
+      </div>
+    </div>
+  );
+}
+
+function SingleNavItem(d: NavItem) {
+  const [animationParent] = useAutoAnimate();
+  const [isItemOpen, setItem] = useState(false);
+
+  function toggleItem() {
+    return setItem(!isItemOpen);
+  }
+
+  return (
+    <Link
+      ref={animationParent}
+      onClick={toggleItem}
+      href={d.link ?? "#"}
+      className="relative   px-2 py-3 transition-all "
+    >
+      <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
+        <span>{d.label}</span>
+        {d.children && (
+          // rotate-180
+          <IoIosArrowDown
+            className={`text-xs transition-all  ${isItemOpen && " rotate-180"}`}
+          />
+        )}
+      </p>
+
+      {/* dropdown */}
+      {isItemOpen && d.children && (
+        <div className="  w-auto  flex-col gap-1   rounded-lg bg-white py-3   transition-all flex ">
+          {d.children.map((ch, i) => (
+            <Link
+              key={i}
+              href={ch.link ?? "#"}
+              className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+            >
+              {/* item */}
+              <span className="whitespace-nowrap   pl-3 ">{ch.label}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </Link>
+  );
+}

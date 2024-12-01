@@ -2,9 +2,10 @@ import Image from 'next/image'
 
 const Banner = () => {
     return (
-        <div className="relative flex items-center justify-center h-96 text-white bg-white text-center p-8 overflow-hidden">
+        <div className="relative z-0 flex items-center justify-center h-96 text-white bg-white text-center p-8 overflow-hidden">
             {/* Background Image */}
-            <Image fill={true}
+            <Image 
+                fill={true}
                 src="/images/banner/banner.jpeg" // URL gambar latar belakang
                 alt="Background"
                 className="absolute inset-0 w-full h-full"
