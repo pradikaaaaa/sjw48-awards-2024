@@ -63,7 +63,7 @@ export default function Header() {
   }
 
   return (
-    <div className="relative z-10 mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm border">
+    <div className="relative z-10 mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm border bg-white">
       {/* left side  */}
       <section ref={animationParent} className="flex items-center mx-6 gap-10">
         {/* logo */}
