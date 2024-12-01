@@ -34,25 +34,25 @@ const VoteList = () => {
       title: "CAT 1 SJW48 Awards 2024",
       subtitle: "250 Suara",
       buttonLabel: "PESAN",
-      url_cat : "https://wa.me/6285183184848"
+      url_cat : "https://link.tiptip.id/VfggVuGI1hu"
     },
     {
       title: "CAT 2 SJW48 Awards 2024",
       subtitle: "75 Suara",
       buttonLabel: "PESAN",
-      url_cat : "https://tiptip.id/"
+      url_cat : "https://link.tiptip.id/QGhED2vGgGr"
     },
     {
       title: "CAT 6 SJW48 Awards 2024",
       subtitle: "10 Suara",
       buttonLabel: "PESAN",
-      url_cat : "https://tiptip.id/"
+      url_cat : "https://link.tiptip.id/6qGtpo0y93k"
     },
     {
       title: "CAT 8 SJW48 Awards 2024",
       subtitle: "5 Suara",
       buttonLabel: "PESAN",
-      url_cat : "https://tiptip.id/"
+      url_cat : "https://link.tiptip.id/Gw4sWBOUeIr"
     },
   ];
 
