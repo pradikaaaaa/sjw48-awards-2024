@@ -6,11 +6,14 @@ import api from "@/services/api"
 import FormSection from "@/components/Vote/Home/FormSection"
 import VotingPage from "@/components/Vote/Form/VotingPage"
 import { KodeVote } from "@/types/kode_vote"
+import ModalError from "@/components/Modal/ModalError"
 
 const VotePage = () => {
   const [isCodeValid, setIsCodeValid] = useState(false)
   const [maxVote, setMaxVote] = useState(0)
   const [listId, setListId] = useState([])
+  const [openModalError, setOpenModalError] =  useState(false)
+  const [messageError, setMessageError] = useState('')
   const endPoint = `/vote/getVote`
 
   const handleSubmitCode = async (kodeVote : string[]) => {
@@ -27,10 +30,17 @@ const VotePage = () => {
         const idVote = response.data.map((item : KodeVote) => item.id);
         setListId(idVote)
         setIsCodeValid(true)
+      }else if(response.status == '204'){
+        setOpenModalError(true)
+        setMessageError(response.message)
       }
     }catch(error){
       console.warn(error)
     }
+  }
+
+  const handleModalError = (open : boolean) => {
+    setOpenModalError(open)
   }
 
   return (
@@ -42,6 +52,10 @@ const VotePage = () => {
       ) : (
         <div>
           <FormSection onCodeSubmit={handleSubmitCode}/>
+          <ModalError 
+            status={openModalError} 
+            message={messageError}
+            onCloseModal={handleModalError} />
         </div>
       )}
     </div>

@@ -1,11 +1,9 @@
 import axios from "axios";
 
 const create = () => {
-    // const baseURL = "http://localhost:8000"
-    const baseURL = "http://157.20.94.35:8000/"
 
     const client = axios.create({
-        baseURL:baseURL,
+        baseURL: process.env.NEXT_PUBLIC_API_URL,
         timeout:10000,
         headers:{
             'Content-Type': 'application/json',

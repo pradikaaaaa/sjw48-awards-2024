@@ -23,13 +23,13 @@ const Card = ({ number, text, buttonText, url } : {number:string, text:string, b
       {/* Card 2 */}
       <Card 
         number="1" 
-        text="fanbase dengan posisi tertinggi akan terpilih menjadi pemenang FANBASE of the Year" 
+        text="fanbase dengan posisi tertinggi akan terpilih menjadi pemenang Fanbase Pilihan Pemirsa 2024" 
         buttonText=""
         url=""
       />
   
       {/* Vote Button */}
-      <a href="/vote" className="mt-4 mb-10 px-6 py-3 bg-[#F86B85] text-center text-white text-lg font-bold rounded-full shadow-lg hover:opacity-90 transition duration-300 lg:w-96 2xs:w-72">
+      <a href="/vote-fanbase" className="mt-4 mb-10 px-6 py-3 bg-[#F86B85] text-center text-white text-lg font-bold rounded-full shadow-lg hover:opacity-90 transition duration-300 lg:w-96 2xs:w-72">
         VOTE SEKARANG
       </a>
     </div>
