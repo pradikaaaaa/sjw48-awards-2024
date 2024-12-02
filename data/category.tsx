@@ -220,7 +220,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 3,
-                nama : "Nat UPGIRLS",
+                nama : "Nat",
                 foto : "/images/kategori/keluarga-member/angeline-natasya.webp"
             },
             {
@@ -341,7 +341,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 5,
-                nama : "Alu (Kakaknya Rea)",
+                nama : "Alu",
                 foto : "/images/kategori/buronan/alu-kakaknya-rea-upgrilis.webp"
             },
             {
