@@ -174,22 +174,22 @@ const categoryList: Category[] = [
             {
                 id : 1,
                 nama : "Azizi",
-                foto : "/images/kategori/member-film/AziziAsadel.webp"
+                foto : "/images/kategori/member-film/zee-6749b7d6f2d72.webp"
             },
             {
                 id : 2,
                 nama : "Freya",
-                foto : "/images/kategori/member-film/freya-jayawardhana.webp"
+                foto : "/images/kategori/member-film/freya.webp"
             },
             {
                 id : 3,
                 nama : "Gracia",
-                foto : "/images/kategori/member-film/shania-gracia.webp"
+                foto : "/images/kategori/member-film/Gracia.webp"
             },
             {
                 id : 4,
                 nama : "Ashel",
-                foto : "/images/kategori/member-film/AdzanaSaliha.webp"
+                foto : "/images/kategori/member-film/ashel.webp"
             },
             {
                 id : 5,
@@ -218,11 +218,11 @@ const categoryList: Category[] = [
                 nama : "Robby Pantjoro",
                 foto : "/images/kategori/keluarga-member/robby-pantjoro.webp"
             },
-            // {
-            //     id : 3,
-            //     nama : "Nat UPGRILIS",
-            //     foto : "/images/kategori/keluarga-member/jennifer_hanna.webp"
-            // },
+            {
+                id : 3,
+                nama : "Nat UPGIRLS",
+                foto : "/images/kategori/keluarga-member/angeline-natasya.webp"
+            },
             {
                 id : 4,
                 nama : "Krishnatio",
@@ -241,13 +241,13 @@ const categoryList: Category[] = [
             {
                 id : 7,
                 nama : "Rafa",
-                foto : "/images/kategori/keluarga-member/rafa.webp"
+                foto : "/images/kategori/keluarga-member/Rafa.webp"
             }
         ]
     },
     {
         id : 8,
-        nama : "TUBIR MEMBER OF THE YEAR",
+        nama : "TUBIR OF THE YEAR",
         tipe : "of-the-year",
         nominasi : [
             {
@@ -258,7 +258,7 @@ const categoryList: Category[] = [
             {
                 id : 2,
                 nama : "Warkop Mamang AB",
-                foto : "/images/kategori/tubir/skandal-mamang-ab.webp"
+                foto : "/images/kategori/tubir/WarkopMamangAB.webp"
             },
             {
                 id : 3,
@@ -290,7 +290,7 @@ const categoryList: Category[] = [
             {
                 id : 1,
                 nama : "Setting Roulette",
-                foto : "/images/kategori/alasan-banned/setting-rulet.webp"
+                foto : "/images/kategori/alasan-banned/SettingRoulete.webp"
             },
             {
                 id : 2,
@@ -322,17 +322,17 @@ const categoryList: Category[] = [
             {
                 id : 1,
                 nama : "Rdoy",
-                foto : "/images/kategori/buronan/rdoy.webp"
+                foto : "/images/kategori/buronan/Rdoy.webp"
             },
             {
                 id : 2,
                 nama : "Johan Wijaya",
-                foto : "/images/kategori/buronan/johan-wijaya.webp"
+                foto : "/images/kategori/buronan/JohanWijaya.webp"
             },
             {
                 id : 3,
                 nama : "Jovan",
-                foto : "/images/kategori/buronan/jovan.webp"
+                foto : "/images/kategori/buronan/Jovan.webp"
             },
             {
                 id : 4,
@@ -347,7 +347,7 @@ const categoryList: Category[] = [
             {
                 id : 6,
                 nama : "JOT Streamer",
-                foto : "/images/kategori/buronan/streamer-jot.webp"
+                foto : "/images/kategori/buronan/bombom.webp"
             }
         ]
     }
