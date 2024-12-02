@@ -241,7 +241,7 @@ const categoryList: Category[] = [
             {
                 id : 7,
                 nama : "Rafa",
-                foto : "/images/kategori/keluarga-member/Rafa.webp"
+                foto : "/images/kategori/keluarga-member/rafa.webp"
             }
         ]
     },
@@ -322,7 +322,7 @@ const categoryList: Category[] = [
             {
                 id : 1,
                 nama : "Rdoy",
-                foto : "/images/kategori/buronan/Rdoy.webp"
+                foto : "/images/kategori/buronan/rdoy.webp"
             },
             {
                 id : 2,
@@ -332,7 +332,7 @@ const categoryList: Category[] = [
             {
                 id : 3,
                 nama : "Jovan",
-                foto : "/images/kategori/buronan/Jovan.webp"
+                foto : "/images/kategori/buronan/jovan.webp"
             },
             {
                 id : 4,
