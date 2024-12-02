@@ -82,7 +82,7 @@ const categoryList: Category[] = [
     },
     {
         id : 3,
-        nama : "FANDMADE TERFAVORIT",
+        nama : "FANDMADE EVENT TERFAVORIT",
         tipe : "terfavorit",
         nominasi : [
             {
@@ -119,27 +119,27 @@ const categoryList: Category[] = [
         nominasi : [
             {
                 id : 1,
-                nama : "nagaginy",
+                nama : "Nagaginy",
                 foto : "/images/kategori/clipper/at-nagaginy.webp"
             },
             {
                 id : 2,
-                nama : "yokanang",
+                nama : "Yokanang",
                 foto : "/images/kategori/clipper/yokanang.webp"
             },
             {
                 id : 3,
-                nama : "domlica",
+                nama : "Domlica",
                 foto : "/images/kategori/clipper/domlica.webp"
             },
             {
                 id : 4,
-                nama : "vicc89",
+                nama : "Vicc89",
                 foto : "/images/kategori/clipper/at-viiccc89.webp"
             },
             {
                 id : 5,
-                nama : "showroom x jkt48",
+                nama : "Showroom x JKT48",
                 foto : "/images/kategori/clipper/showroom-x-jkt48.webp"
             }
         ]
@@ -161,7 +161,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 3,
-                nama : "Sekali lagi Gracia",
+                nama : "Sekali lagi Gracia!",
                 foto : "/images/kategori/gracia/gracia.webp"
             }
         ]
@@ -198,7 +198,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 6,
-                nama : "Jessi (ipeh)",
+                nama : "Jessi (Ipeh)",
                 foto : "/images/kategori/member-film/jessi-ipeh.webp"
             }
         ]
@@ -262,12 +262,12 @@ const categoryList: Category[] = [
             },
             {
                 id : 3,
-                nama : "Chelsea ngulik",
+                nama : "Ngulik Gitar",
                 foto : "/images/kategori/tubir/ngulik-gitar.webp"
             },
             {
                 id : 4,
-                nama : "Streamer infinity war",
+                nama : "Streamer Infinity War",
                 foto : "/images/kategori/tubir/streamer-infinity-war.webp"
             },
             {
@@ -299,7 +299,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 3,
-                nama : "Motred di Konser",
+                nama : "Foto di Konser",
                 foto : "/images/kategori/alasan-banned/moto-di-konser.webp"
             },
             {
@@ -309,7 +309,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 5,
-                nama : "Gak minta maaf dari tahun lalu",
+                nama : "Gak Minta Maaf Dari Tahun Lalu",
                 foto : "/images/kategori/alasan-banned/gak-minta-maaf-dari-tahun-lalu.webp"
             }
         ]
