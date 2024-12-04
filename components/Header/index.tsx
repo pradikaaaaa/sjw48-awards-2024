@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
     link: "#",
     children: [
       {
-        label: "SJW48 AWARDS 2024",
+        label: "TERFAVORIT",
         link: "/vote-awards"
       },
       {
@@ -95,7 +95,7 @@ export default function Header() {
                     <Link
                       key={i}
                       href={ch.link ?? "#"}
-                      className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+                      className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
                     >
                       {/* item */}
                       <span className="whitespace-nowrap   pl-3 ">

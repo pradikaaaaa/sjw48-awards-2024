@@ -2,18 +2,17 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense } from 'react'
+import Link from "next/link"
 
 import CardCandidate from "@/components/Card/CardCandidate";
 import categoryList from "@/data/category";
+import { Category } from "@/types/category";
 
-function SearchTipe() {
-  const searchParams = useSearchParams()
-  const tipe = searchParams.get('tipe')
-  const filteredData = categoryList.filter((item) => item.tipe === tipe)
-
+function SearchTipe({filteredData}:{filteredData : Category[]}) {
+  
   return <>{filteredData.map((category) => (
     <>
-      <div className="pt-3">
+      <div key={category.id} className="pt-3">
         <h2 className="text-3xl font-bold mx-8 text-black">
           {category.nama}
         </h2>
@@ -39,17 +38,47 @@ function SearchTipe() {
 }
 
 const CategoryPage = () => {
+  const searchParams = useSearchParams()
+  const tipe = searchParams.get('tipe')
+  const filteredData = categoryList.filter((item) => item.tipe === tipe)
+
+
+  const kategori = [
+    {
+      nama: "TERFAVORIT",
+      tipe : "terfavorit",
+      deskripsi : "Sebuah penghargaan di rangkaian SJW48 Awards untuk insan wota dan member yang dipilih melalui pemungutan suara di link ",
+      url : "/vote-awards"
+    },
+    {
+      nama: "OF THE YEAR",
+      tipe : "of-the-year",
+      deskripsi : "Sebuah penghargaan di rangkaian SJW48 Awards untuk insan wota dan member yang dipilih oleh kurator internal SJW48 dengan keputusan mutlak dan tidak dapat diganggu gugat.",
+      url : null
+    }
+  ]
+
+  const filteredKategori = kategori.filter((item)=>item.tipe === tipe)
+
   return (
     <>
+     <Suspense>
       <div className="min-h-screen bg-white">
-        <section className="flex justify-center">
-          <h2 className="text-4xl font-bold mx-8 py-8 text-black">KATEGORI</h2>
+        <section className="flex justify-center flex-col items-center mb-9">
+          <h2 className="text-4xl font-bold mx-8 pt-8 mb-2 text-black">KATEGORI {filteredKategori[0].nama}</h2>
+          <p className="text-xl text-justify w-3/4">
+            {filteredKategori[0].deskripsi} {filteredKategori[0].url ? <>
+              <Link
+                  className="cursor-pointer text-blue-500 hover:text-gray-400" 
+                  href={filteredKategori[0].url}>
+                ini.
+              </Link>
+            </> : null}
+          </p>
         </section>
-        <Suspense>
-          <SearchTipe />
-        </Suspense>
-
+          <SearchTipe filteredData={filteredData} />
       </div>
+      </Suspense>
     </>
   );
 };

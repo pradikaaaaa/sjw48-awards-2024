@@ -19,7 +19,7 @@ const VotingPage = ({
   maxVotes: number;
   listIdVote: number[];
 }) => {
-    const router = useRouter()
+  const router = useRouter()
 
   const [maxVote, setMaxVote] = useState(0);
   const [nominasi, setNominasi] = useState<Fanbase[]>([]);
@@ -117,7 +117,7 @@ const VotingPage = ({
       </p>
       <div className="flex flex-col md:flex-row">
         {/* Bagian VoteSection */}
-        <div className="flex md:w-1/4 mb-6 md:mb-0 md:mr-6 xs:justify-center">
+        <div className="flex md:w-1/4 mb-6 md:mb-0 md:mr-6 2xs:justify-center 2xs:place-content-end">
           <VoteSection
             voteTerpakai={maxVote - totalVotes}
             jumlahVotes={maxVote}
@@ -126,7 +126,7 @@ const VotingPage = ({
         </div>
 
         {/* Bagian Kandidat */}
-        <div className="static md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-4 xl:mb-4 sm:mb-80 xs:mb-80">
+        <div className="static md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-4 xl:mb-4 sm:mb-80 xs:mb-80 2xs:mb-32">
           {nominasi.map((candidate, index) => (
             <CandidateCard
               key={index}
@@ -148,6 +148,7 @@ const VotingPage = ({
         onClickVote={handleVoteKonfirmasi}
         onSubmitVote={handleSubmitVote}
       />
+
 
       <ModalSelesaiVote status={openModalSelesai} />
 
