@@ -46,7 +46,7 @@ function GeneratePage() {
       nama: "TERFAVORIT",
       tipe: "terfavorit",
       deskripsi: "Sebuah penghargaan di rangkaian SJW48 Awards untuk insan wota dan member yang dipilih melalui pemungutan suara di link ",
-      url: "/vote-awards"
+      url: "/vote/terfavorit"
     },
     {
       nama: "OF THE YEAR",
