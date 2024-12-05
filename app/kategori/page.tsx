@@ -63,7 +63,7 @@ function GeneratePage() {
       <div className="min-h-screen bg-white">
         <section className="flex justify-center flex-col items-center mb-9">
           <h2 className="text-4xl font-bold mx-8 pt-8 mb-2 text-black">KATEGORI {filteredKategori[0].nama}</h2>
-          <p className="text-xl text-justify w-3/4">
+          <p className="text-xl text-justify w-3/4 text-black">
             {filteredKategori[0].deskripsi} {filteredKategori[0].url ? <>
               <Link
                 className="cursor-pointer text-blue-500 hover:text-gray-400"

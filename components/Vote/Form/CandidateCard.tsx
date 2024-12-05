@@ -66,7 +66,7 @@ const CandidateCard = ({
         alt={name}
         className="w-full h-full object-cover rounded-md mb-2"
       />
-      <h3 className="text-center font-semibold">{name}</h3>
+      <h3 className="text-black text-center font-semibold">{name}</h3>
       <div className="flex items-center justify-between w-full mt-2">
         <button onClick={decrementVote} className="text-lg font-bold px-2">
           -

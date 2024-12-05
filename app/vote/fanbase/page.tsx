@@ -1,6 +1,5 @@
 'use client'
 
-// import { useRouter } from "next/navigation"
 import { useState } from "react"
 import api from "@/services/api"
 import FormSection from "@/components/Vote/Home/FormSection"

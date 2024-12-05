@@ -24,11 +24,11 @@ const navItems: NavItem[] = [
     children: [
       {
         label: "TERFAVORIT",
-        link: "/vote-awards"
+        link: "/vote/terfavorit"
       },
       {
         label: "FANBASE PILIHAN PEMIRSA",
-        link: "/vote-fanbase"
+        link: "/vote/fanbase"
       },
     ]
   },
