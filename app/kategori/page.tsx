@@ -51,7 +51,7 @@ function GeneratePage() {
     {
       nama: "OF THE YEAR",
       tipe: "of-the-year",
-      deskripsi: "Sebuah penghargaan di rangkaian SJW48 Awards untuk insan wota dan member yang dipilih oleh kurator internal SJW48 dengan keputusan mutlak dan tidak dapat diganggu gugat.",
+      deskripsi: "Sebuah penghargaan di rangkaian SJW48 Awards untuk insan wota dan member yang dipilih oleh kurator internal SJW48 dengan keputusan mutlak dan tidak dapat diganggu gugat (kecuali oleh pemegang tiket CAT1).",
       url: null
     }
   ]
