@@ -82,7 +82,7 @@ const categoryList: Category[] = [
     },
     {
         id : 3,
-        nama : "FANDMADE EVENT TERFAVORIT",
+        nama : "FANMADE EVENT TERFAVORIT",
         tipe : "terfavorit",
         nominasi : [
             {

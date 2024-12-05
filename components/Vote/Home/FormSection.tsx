@@ -65,8 +65,8 @@ const FormSection = ({onCodeSubmit}:{onCodeSubmit:(code: string[])=> void}) => {
         <span className="text-sm text-black-900">
           *Setiap kolom hanya dapat memuat 1 kode voting.
         </span>
-        {/* <br />
-          <span className="text-sm text-gray-500">*Maks 50 kolom dalam satu sesi pengumpulan kode.</span> */}
+        <br />
+          <span className="text-sm text-gray-500">*Maks 5 kolom dalam satu sesi pengumpulan kode.</span>
       </p>
 
       {/* Voting Inputs */}
