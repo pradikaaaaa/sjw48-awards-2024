@@ -95,10 +95,10 @@ export default function Header() {
                     <Link
                       key={i}
                       href={ch.link ?? "#"}
-                      className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
+                      className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                     >
                       {/* item */}
-                      <span className="whitespace-nowrap   pl-3 ">
+                      <span className="whitespace-nowrap pl-3 ">
                         {ch.label}
                       </span>
                     </Link>
@@ -128,7 +128,7 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
             className="cursor-pointer text-black text-4xl "
           />
         </section>
-        <div className=" flex flex-col text-base  gap-2 transition-all">
+        <div className=" flex flex-col text-base gap-2 transition-all">
           {navItems.map((d, i) => (
             <SingleNavItem
               key={i}
@@ -169,7 +169,7 @@ function SingleNavItem(d: NavItem) {
       href={d.link ?? "#"}
       className="relative   px-2 py-3 transition-all "
     >
-      <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black ">
+      <p className="flex cursor-pointer items-center gap-2 text-neutral-400 group-hover:text-black font-bold">
         <span>{d.label}</span>
         {d.children && (
           // rotate-180
@@ -189,7 +189,7 @@ function SingleNavItem(d: NavItem) {
               className=" flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black  "
             >
               {/* item */}
-              <span className="whitespace-nowrap   pl-3 ">{ch.label}</span>
+              <span className="whitespace-nowrap pl-3 ">{ch.label}</span>
             </Link>
           ))}
         </div>
