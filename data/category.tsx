@@ -107,7 +107,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 5,
-                nama : "Have Fun (SJW48)",
+                nama : "HAVEFUN (SJW48)",
                 foto : "/images/kategori/fandmade-event/havefun-sjw48.webp"
             }
         ]
@@ -225,7 +225,7 @@ const categoryList: Category[] = [
             },
             {
                 id : 4,
-                nama : "Krishnatio",
+                nama : "Krishna Natio",
                 foto : "/images/kategori/keluarga-member/krishna-natio.webp"
             },
             {
@@ -294,12 +294,12 @@ const categoryList: Category[] = [
             },
             {
                 id : 2,
-                nama : "Jual Beli 2s",
+                nama : "Jual Beli 2 Shot",
                 foto : "/images/kategori/alasan-banned/jual-beli-2-shot.webp"
             },
             {
                 id : 3,
-                nama : "Foto di Konser",
+                nama : "Foto pas Konser",
                 foto : "/images/kategori/alasan-banned/moto-di-konser.webp"
             },
             {
