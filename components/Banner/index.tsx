@@ -2,7 +2,16 @@ import Image from 'next/image'
 
 const Banner = () => {
     return (
-        <div className="relative z-0 flex items-center justify-center h-96 text-white bg-white text-center p-8 overflow-hidden">
+        <div className="relative z-0 flex items-center 
+            justify-center 
+            h-[541px] 
+            2xs:h-[108.2px]
+            xs:h-[162.3px]
+            sm:h-[216.4px] 
+            md:h-[259.7px] 
+            lg:h-[541px] 
+            xl:h-[541px] 
+            text-white bg-white text-center p-8 overflow-hidden">
             {/* Background Image */}
             <Image 
                 fill={true}

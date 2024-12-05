@@ -112,7 +112,7 @@ export default function Header() {
 
       <FiMenu
         onClick={openSideMenu}
-        className="cursor-pointer text-4xl md:hidden"
+        className="cursor-pointer text-4xl text-black md:hidden"
       />
     </div>
   );
@@ -125,7 +125,7 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
         <section className="flex justify-end">
           <AiOutlineClose
             onClick={closeSideMenu}
-            className="cursor-pointer text-4xl "
+            className="cursor-pointer text-black text-4xl "
           />
         </section>
         <div className=" flex flex-col text-base  gap-2 transition-all">
